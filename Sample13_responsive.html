@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      /* Above 600px the following ruples will apply */
+      @media only screen and (min-width: 600px) {
+        h1 {
+          color: red;
+        }
+      }
+
+      /* Up to 599px the following rules will apply */
+      @media only screen and (max-width: 600px) {
+        h1 {
+          background: grey;
+        }
+      }
+      @media only screen and (max-width: 900px) {
+        #myDiv {
+          width: 100% !important;
+        }
+      }
+      @media only screen and (min-width: 900px) {
+        h2 {
+          display: block !important;
+        }
+      }
+
+      #myDiv {
+        width: 900px;
+        background: red;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome To Responsive Webdesign</h1>
+    <h2 style="display: none">I will be visible after 900px</h2>
+    <div id="myDiv"></div>
+  </body>
+</html>
