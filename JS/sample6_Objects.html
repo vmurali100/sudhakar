@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var person = {};
+      person.fname = "Murali";
+      person.lname = "Krishna";
+      person["email"] = "murali@gmail.com";
+
+      // Rules While Creating Objects
+
+      //   1. We can  not have = inside object ,
+      //   2. Each Property has to be separated with ,
+
+      var person2 = {
+        fname: "Dainius",
+        lname: "Demeritt",
+        tel: "(542)186-6808",
+        address: "6550 Velit St",
+        city: "Valencia",
+        state: "NJ",
+        zip: 63325
+      };
+      //TO display Value on the Screen
+      //   document.write(person.fname + "<br>");
+      //   document.write(person.lname + "<br>");
+      //   document.write(person.email);
+
+      for (a in person2) {
+        document.write(person2[a] + "<br>");
+        // console.log(a);
+      }
+    </script>
+  </body>
+</html>
