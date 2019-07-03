@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="display()">Display Friends</button>
+    <button onclick="deleteFirst()">Delete First</button>
+    <button onclick="deleteLast()">Delete Last</button>
+    <button onclick="deleteMiddle()">Delete Last</button>
+    <button onclick="AddFirst()">Add First</button>
+    <button onclick="AddLast()">Add Last</button>
+    <button onclick="AddMiddle()">Add Middle</button>
+    <button onclick="sort()">Sort</button>
+    <button onclick="reverse()">Reverse</button>
+
+    <div id="demo"></div>
+    <script>
+      var friends = ["Murali", "Andul", "Ram", "Sudha", "Ravi"];
+      function display() {
+        var results = "";
+        for (i = 0; i < friends.length; i++) {
+          //   document.write(friends[i] + "<br>");
+          results = results + friends[i] + "<br>";
+        }
+        document.getElementById("demo").innerHTML = results;
+      }
+
+      function deleteFirst() {
+        friends.shift(); // TO delete the Value in the Beginning
+        document.getElementById("demo").innerHTML = ""; // To Clear the Div
+        display(); // TO Display The Latest Value
+      }
+    </script>
+  </body>
+</html>
