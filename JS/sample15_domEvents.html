@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button onclick="sayHello()">Click</button> -->
+    <button id="myBtn">Click</button>
+    <button id="myRemove">Remove</button>
+
+    <script>
+      //   document.getElementsByTagName("button")[0].onclick = sayHello;
+      //   document.getElementById("myBtn").onclick = sayHello;
+      document.getElementById("myBtn").addEventListener("click", sayHello);
+      document.getElementById("myRemove").onclick = removeEvent;
+
+      function removeEvent() {
+        document.getElementById("myBtn").removeEventListener("click", sayHello);
+      }
+
+      function sayHello() {
+        alert("Hello World");
+      }
+    </script>
+  </body>
+</html>
