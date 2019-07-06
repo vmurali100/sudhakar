@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="showInfo()">Click</button>
+    <div id="demo"></div>
+    <script>
+      var statements = ["Helo Abdul", "Helo Ram", "Helo Ravi", "Helo Murali"];
+      function showInfo() {
+        // document.write("Helo Abdul");
+        // document.getElementById("demo").innerHTML = "Helo Abdul How Are you";
+        var results = "";
+        for (i = 0; i < statements.length; i++) {
+          results = results + statements[i] + "<br>";
+        }
+        document.getElementById("demo").innerHTML = results;
+      }
+    </script>
+  </body>
+</html>

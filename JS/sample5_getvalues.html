@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="email">Email</label>
+      <input type="text" id="email" /><br />
+      <label for="userName">User Name</label>
+      <input type="text" id="userName" /><br />
+
+      <label for="company">Company Name</label>
+      <input type="text" id="company" /><br />
+
+      <label for="city">City Name</label>
+      <input type="text" id="city" /><br />
+
+      <label for="state">State Name</label>
+      <input type="text" id="state" /><br />
+      <button onclick="getData()" type="button">Get Date</button>
+    </form>
+    <hr />
+    <div id="demo"></div>
+    <script>
+      function getData() {
+        var person = {};
+        person.email = document.getElementById("email").value;
+        person.userName = document.getElementById("userName").value;
+
+        person.company = document.getElementById("company").value;
+        person.city = document.getElementById("city").value;
+        person.state = document.getElementById("state").value;
+
+        console.log(person);
+        displayUser(person);
+        clearForm();
+      }
+
+      function clearForm() {
+        document.getElementById("email").value = "";
+        document.getElementById("userName").value = "";
+        document.getElementById("company").value = "";
+        document.getElementById("city").value = "";
+        document.getElementById("state").value = "";
+      }
+
+      function displayUser(person) {
+        var results = "";
+        for (a in person) {
+          //   document.write(person[a]);
+          results = results + person[a] + "<br>";
+        }
+        document.getElementById("demo").innerHTML = results;
+      }
+    </script>
+  </body>
+</html>

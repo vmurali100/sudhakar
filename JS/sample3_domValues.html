@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="subjects">Subjects</label><br />
+    <input type="checkbox" name="subjects" value="HTML" />HTML <br />
+    <input type="checkbox" name="subjects" value="CSS" />CSS <br />
+    <input type="checkbox" name="subjects" value="JS" />JS <br />
+    <input type="checkbox" name="subjects" value="Angular" />Angular
+    <br />
+
+    <!-- <label for="gender">Gender</label><br />
+    <input
+      type="radio"
+      name="gender"
+      id=""
+      value="Male"
+      onclick="display()"
+    />Male <br />
+    <input
+      type="radio"
+      name="gender"
+      id=""
+      value="Female"
+      onclick="display()"
+    />Female <br /> -->
+    <!-- <h1>Hello World</h1> -->
+    <!-- <label for="fname">First Name</label>
+    <input type="text" name="myN" id="myI" class="myC" /> -->
+    <!-- <select name="myN" id="myI">
+      <option value="MY HTML">HTML</option>
+      <option value="MY CSS">CSS</option>
+      <option value="MY JS">JS</option>
+    </select> -->
+    <script>
+      function display() {
+        var rbtns = document.getElementsByName("gender");
+        for (i = 0; i < rbtns.length; i++) {
+          if (rbtns[i].checked) {
+            console.log(rbtns[i].value);
+          }
+        }
+      }
+      //   document.getElementById("myI").value;
+    </script>
+  </body>
+</html>
