@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="fname">First Name</label><br />
+    <input type="text" id="fname" /><br />
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" /><br />
+    <label for="email">Email</label>
+    <input type="text" id="email" /><br />
+    <label for="gender">Gender</label>
+    <input type="radio" name="gender" id="" value="Male" />Male
+    <input type="radio" name="gender" id="" value="Female" />Female
+
+    <br />
+    <button onclick="setValue()">Set Value</button>
+
+    <hr />
+
+    <button onclick="getValue()">Get Value</button>
+    <script>
+      var person = {
+        fname: "Murali",
+        lname: "Krishna",
+        email: "vmurali100@gmail.com",
+        gender: "Female"
+      };
+
+      function setValue() {
+        // document.getElementById("fname").value = person.fname;
+        // document.getElementById("lname").value = person.lname;
+        // document.getElementById("email").value = person.email;
+        for (a in person) {
+          if (a != "gender") {
+            document.getElementById(a).value = person[a];
+          } else {
+            var cboxes = document.getElementsByName("gender");
+            for (i = 0; i < cboxes.length; i++) {
+              if (cboxes[i].value == person[a]) {
+                cboxes[i].checked = true;
+              }
+            }
+          }
+        }
+      }
+
+      function getValue() {
+        var getPerson = {};
+        //   getPerson.fname = document.getElementById("fname").value;
+        //   getPerson.lname = document.getElementById("lname").value;
+        //   getPerson.email = document.getElementById("email").value;
+        for (a in person) {
+          //Radio Buttons
+          if (a != "gender") {
+            getPerson[a] = document.getElementById(a).value;
+          } else {
+            var cboxes = document.getElementsByName("gender");
+            for (i = 0; i < cboxes.length; i++) {
+              if (cboxes[i].checked) {
+                getPerson[a] = cboxes[i].value;
+              }
+            }
+          }
+        }
+        console.log(getPerson);
+        clearForm();
+      }
+
+      function clearForm() {
+        for (a in person) {
+          if (a != "gender") {
+            document.getElementById(a).value = "";
+          } else {
+            var cboxes = document.getElementsByName("gender");
+            for (i = 0; i < cboxes.length; i++) {
+              cboxes[i].checked = false;
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
