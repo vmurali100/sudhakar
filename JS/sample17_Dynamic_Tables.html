@@ -9,6 +9,8 @@
         <th>Fname</th>
         <th>Lname</th>
         <th>Email</th>
+        <th>Edit</th>
+        <th>delete</th>
       </thead>
       <tbody id="myTable"></tbody>
     </table>
@@ -47,11 +49,26 @@
           myTd.innerHTML = obj[a];
           myTr.appendChild(myTd);
         }
-        // for (j = 0; j < 3; j++) {
-        //   console.log("i am excuted");
-        //   var myTd = document.createElement("td");
-        //   myTr.appendChild(myTd);
-        // }
+        var editTd = document.createElement("td");
+        var editBtn = document.createElement("button");
+        editBtn.innerHTML = "Edit";
+        editBtn.setAttribute("onclick", "editUser()");
+        editTd.appendChild(editBtn);
+        myTr.appendChild(editTd);
+
+        var deleteTd = document.createElement("td");
+        var delBtn = document.createElement("button");
+        delBtn.innerHTML = "Delete";
+        delBtn.setAttribute("onclick", "delUser()");
+        deleteTd.appendChild(delBtn);
+        myTr.appendChild(deleteTd);
+      }
+
+      function editUser() {
+        alert("editUser called");
+      }
+      function delUser() {
+        alert("delUser called");
       }
     </script>
   </body>
