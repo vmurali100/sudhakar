@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <th>Fname</th>
+        <th>Lname</th>
+        <th>Email</th>
+      </thead>
+      <tbody id="myTable"></tbody>
+    </table>
+    <script>
+      var data = [
+        {
+          fname: "Xiaoyan",
+          lname: "Kvasnak",
+          tel: "(850)106-0019"
+        },
+        {
+          fname: "Ning",
+          lname: "Kehr",
+          tel: "(568)519-7136"
+        },
+        {
+          fname: "Chunlei",
+          lname: "Weeks",
+          tel: "(811)664-6186"
+        },
+        {
+          fname: "Lois",
+          lname: "Pitts",
+          tel: "(524)927-8024"
+        }
+      ];
+      for (i = 0; i < data.length; i++) {
+        var myTr = document.createElement("tr");
+        addTds(data[i]);
+        document.getElementById("myTable").appendChild(myTr);
+      }
+
+      function addTds(obj) {
+        for (a in obj) {
+          var myTd = document.createElement("td");
+          myTd.innerHTML = obj[a];
+          myTr.appendChild(myTd);
+        }
+        // for (j = 0; j < 3; j++) {
+        //   console.log("i am excuted");
+        //   var myTd = document.createElement("td");
+        //   myTr.appendChild(myTd);
+        // }
+      }
+    </script>
+  </body>
+</html>
