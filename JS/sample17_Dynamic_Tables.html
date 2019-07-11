@@ -37,13 +37,16 @@
           tel: "(524)927-8024"
         }
       ];
+
+      // TO create Table Rows
       for (i = 0; i < data.length; i++) {
         var myTr = document.createElement("tr");
-        addTds(data[i]);
+        addTds(data[i], i, myTr);
         document.getElementById("myTable").appendChild(myTr);
       }
 
-      function addTds(obj) {
+      //TO Create Table Details (Td)
+      function addTds(obj, i, myTr) {
         for (a in obj) {
           var myTd = document.createElement("td");
           myTd.innerHTML = obj[a];
@@ -52,23 +55,34 @@
         var editTd = document.createElement("td");
         var editBtn = document.createElement("button");
         editBtn.innerHTML = "Edit";
-        editBtn.setAttribute("onclick", "editUser()");
+        editBtn.setAttribute("onclick", "editUser(" + i + ")");
         editTd.appendChild(editBtn);
         myTr.appendChild(editTd);
 
         var deleteTd = document.createElement("td");
         var delBtn = document.createElement("button");
         delBtn.innerHTML = "Delete";
-        delBtn.setAttribute("onclick", "delUser()");
+        delBtn.setAttribute("onclick", "delUser(" + i + ")");
         deleteTd.appendChild(delBtn);
         myTr.appendChild(deleteTd);
       }
 
-      function editUser() {
-        alert("editUser called");
+      function editUser(i) {
+        alert("editUser called " + i);
       }
-      function delUser() {
-        alert("delUser called");
+      function delUser(i) {
+        // alert("delUser called " + i);
+        data.splice(i, 1);
+        displayUsers(data);
+      }
+
+      function displayUsers(data) {
+        document.getElementById("myTable").innerHTML = "";
+        for (i = 0; i < data.length; i++) {
+          var myTr = document.createElement("tr");
+          addTds(data[i], i, myTr);
+          document.getElementById("myTable").appendChild(myTr);
+        }
       }
     </script>
   </body>
