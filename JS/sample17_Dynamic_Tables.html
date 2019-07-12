@@ -74,8 +74,12 @@
         }
         var editTd = document.createElement("td");
         var editBtn = document.createElement("button");
-        editBtn.innerHTML = "Edit";
-        editBtn.setAttribute("onclick", "editUser(" + i + ")");
+        var anchor = document.createElement("a");
+        anchor.innerHTML = "Edit";
+        anchor.setAttribute("href", "edit.html?=" + i);
+        editBtn.appendChild(anchor);
+        // editBtn.innerHTML = "Edit";
+        editBtn.setAttribute("onclick", "saveUsers()");
         editTd.appendChild(editBtn);
         myTr.appendChild(editTd);
 
@@ -109,26 +113,42 @@
           document.getElementById("myTable").appendChild(myTr);
         }
       }
-      var obj = {
-        fname: "",
-        lname: "",
-        tel: ""
-      };
+
       function updateUser() {
+        var obj = {
+          fname: "",
+          lname: "",
+          tel: ""
+        };
         for (a in obj) {
           obj[a] = document.getElementById(a).value;
-          data[index] = obj;
         }
+        data[index] = obj;
+
         displayUsers(data);
         clearForm();
         document.getElementById("edit").style.display = "none";
       }
 
       function clearForm() {
+        var obj = {
+          fname: "",
+          lname: "",
+          tel: ""
+        };
         for (a in obj) {
           document.getElementById(a).value = "";
         }
       }
+      function saveUsers() {
+        localStorage.setItem("savedData", JSON.stringify(data));
+      }
+
+      function displayLatest() {
+        var data = JSON.parse(localStorage.getItem("savedData"));
+        displayUsers(data);
+      }
+      displayLatest();
     </script>
   </body>
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+      <div id="edit" >
+          <form>
+            <label for="">First Name</label>
+            <input type="text" id="fname" /><br />
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" /><br />
+            <label for="email">Email</label>
+            <input type="text" id="tel" /><br />
+            <button type="button" onclick="updateUser()">Update</button>
+          </form>
+        </div>
+    <script>
+      //   var address = window.location.search;
+      //   var inArray = address.split("=");
+      //   var index = inArray[1];
+      //   console.log(index);
+      var data = JSON.parse(localStorage.getItem('savedData'))
+      var address = window.location.href
+      console.log(address)
+      var index = address.substring(address.indexOf("=")+1)
+      console.log(index)
+      var editObj= data[index]
+      console.log(editObj)
+
+      for( a in editObj){
+        document.getElementById(a).value = editObj[a]
+      }
+
+      function updateUser(){
+        var updateObj={
+          fname: "",
+          lname: "",
+          tel: ""
+        }
+        for(a in updateObj){
+          updateObj[a] = document.getElementById(a).value
+        }
+        data[index] = updateObj
+        localStorage.setItem('savedData',JSON.stringify(data))
+        location.replace("sample17_Dynamic_Tables.html")
+      }
+    </script
+  </body>
+</html>
