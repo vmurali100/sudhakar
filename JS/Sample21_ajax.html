@@ -8,7 +8,7 @@
     <select name="" id="mySelect"></select>
     <script>
       function getData() {
-        var getInfo = new XMLHttpRequest();
+        var getInfo = new XMLHttpRequest(); // Ajax Object will be created
         getInfo.onreadystatechange = function() {
           if (getInfo.readyState == 4 && getInfo.status == 200) {
             console.log(typeof getInfo.response);
