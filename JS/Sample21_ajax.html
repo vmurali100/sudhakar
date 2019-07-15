@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="getData()">Click</button>
+    <select name="" id="mySelect"></select>
+    <script>
+      function getData() {
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function() {
+          if (getInfo.readyState == 4 && getInfo.status == 200) {
+            console.log(typeof getInfo.response);
+            var data = JSON.parse(getInfo.response);
+            displayData(data);
+          }
+        };
+        getInfo.open("GET", "http://localhost:3000/Javascript");
+        getInfo.send();
+      }
+
+      function displayData(data) {
+        for (i = 0; i < data.length; i++) {
+          var opt = document.createElement("option");
+          opt.innerHTML = data[i].topicName;
+          document.getElementById("mySelect").appendChild(opt);
+        }
+      }
+    </script>
+  </body>
+</html>
