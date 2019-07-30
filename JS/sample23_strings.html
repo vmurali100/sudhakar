@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Strings</title>
+</head>
+<body>
+    <script>
+        var message = "Welcome to Javascript";
+        //Length Method will give totol count of characters
+        document.write(message.length)
+
+        // var stringArray =message.split("") // will split a string in to array of strings
+        // var reverse= stringArray.reverse() // reverse a array 
+        // var reversedText = reverse.join("") // Join the values in array
+        // console.log(stringArray)
+
+        // console.log(reverse)
+
+        // console.log(reversedText)
+
+        console.log(message.indexOf("to"))
+
+        // var part = message.substr(message.indexOf("to"),2) // Substring will return a part of string wiht 2 arguments
+        //Arguments required are index and the no of charaters 
+
+        // var part = message.substring(message.indexOf("to"),message.indexOf("to")+2)
+
+        //Substring also simlar to substr , but it required arguments , both are index vallues
+        // console.log(part)
+
+        console.log(message.charAt(8))
+        console.log(message.charCodeAt(8))
+        console.log(String.fromCharCode(116))
+
+    </script>
+</body>
+</html>
