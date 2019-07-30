@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Username</th>
+          <th>Company</th>
+          <th>Country</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="myTable"></tbody>
+    </table>
+    <script>
+      function getlatest() {
+        var getInfo = new XMLHttpRequest();
+        getInfo.onreadystatechange = function() {
+          if (getInfo.readyState == 4 && getInfo.status == 200) {
+            var data = JSON.parse(getInfo.response);
+            console.log(data);
+            displayData(data);
+          }
+        };
+        getInfo.open("GET", "http://localhost:3000/users");
+        getInfo.send();
+      }
+      getlatest();
+
+      function displayData(data) {
+        for (i = 0; i < data.length; i++) {
+          var myTr = document.createElement("tr");
+
+          for (a in data[i]) {
+            if (a != "id" && a != "time" && a != "password") {
+              var mytd = document.createElement("td");
+              mytd.innerHTML = data[i][a];
+              myTr.appendChild(mytd);
+            }
+          }
+          addEditAndDelete(myTr, i);
+          document.getElementById("myTable").appendChild(myTr);
+        }
+      }
+
+      function addEditAndDelete(myTr, i) {
+        console.log(i);
+        var editTd = document.createElement("td");
+        var deleteTd = document.createElement("td");
+
+        var editBtn = document.createElement("button");
+        editBtn.innerHTML = "Edit";
+        editBtn.setAttribute("onclick", "editUser(" + i + ")");
+        var deleteBtn = document.createElement("button");
+        deleteBtn.innerHTML = "Delete";
+        deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+
+        editTd.appendChild(editBtn);
+        deleteTd.appendChild(deleteBtn);
+
+        myTr.appendChild(editTd);
+        myTr.appendChild(deleteTd);
+      }
+
+      function editUser(i) {
+        let obj = { isEdit: true, index: i };
+        localStorage.setItem("obj", JSON.stringify(obj));
+        window.location = "index.html";
+      }
+
+      function deleteUser(i) {
+        let index = i + 1;
+        var delInfo = new XMLHttpRequest();
+        delInfo.onreadystatechange = function() {
+          if (delInfo.readyState == 4 && delInfo.status == 200) {
+            window.location = "allUsers.html";
+          }
+        };
+        delInfo.open("DELETE", "http://localhost:3000/users/" + index);
+        delInfo.setRequestHeader("Content-type", "application/json");
+        delInfo.send();
+      }
+    </script>
+  </body>
+</html>
