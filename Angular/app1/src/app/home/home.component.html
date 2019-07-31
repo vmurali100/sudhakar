@@ -1,1 +1,12 @@
 <p>home works!</p>
+
+{{message}}
+
+<h1>{{person.fname}}</h1>
+<!-- 
+<p>{{person.fname}}</p>
+<p>{{person.lname}}</p>
+<p>{{person.email}}</p>
+<p>{{person.city}}</p> -->
+
+<p *ngFor="let v of objValues">{{person[v]}}</p>
