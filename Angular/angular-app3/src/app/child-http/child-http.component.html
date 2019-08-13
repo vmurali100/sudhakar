@@ -1,0 +1,27 @@
+<p>child-http works!</p>
+
+
+<p>Received From Parent : {{receiveFromParentString}}</p>
+
+<P>DisplayIng Object</P>
+<p *ngFor="let key of objKeys">{{receiveFromParentObj[key]}}</p>
+
+
+
+<hr>
+<p>Display Array Values</p>
+<table border="1">
+    <tr><th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+    </tr>
+    <tr *ngFor ="let obj of receiveFromParentArray">
+        <td>{{obj.id}}</td>
+        <td>{{obj.FirstName}}</td>
+        <td>{{obj.LastName}}</td>
+
+        <td>{{obj.Email}}</td>
+
+    </tr>
+</table>

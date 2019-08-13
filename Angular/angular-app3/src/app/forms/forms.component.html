@@ -1,0 +1,33 @@
+<p>forms works!</p>
+
+<form #myForm="ngForm">
+  First Name :<input
+    type="text"
+    name="FirstName"
+    [(ngModel)]="user.FirstName"
+  /><br />
+  Last Name :<input type="text" name="LastName" [(ngModel)]="user.LastName" />
+  <br />
+  Email : <input type="text" name="Email" [(ngModel)]="user.Email" />
+
+  <button (click)="getValues(myForm)">Get</button>
+  <button (click)="updateUser()">Update</button>
+</form>
+
+<table border="1">
+  <tr>
+    <th>Id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let obj of data">
+    <td>{{ obj.id }}</td>
+    <td>{{ obj.FirstName }}</td>
+    <td>{{ obj.LastName }}</td>
+
+    <td>{{ obj.Email }}</td>
+    <td><button (click)="editUser(obj)">Edit</button></td>
+    <td><button (click)="deleteUser(obj)">Delete</button></td>
+  </tr>
+</table>

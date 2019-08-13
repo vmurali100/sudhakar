@@ -1,0 +1,14 @@
+<p>http-comp works!</p>
+<h5>Array From Http:</h5>
+<button (click)="getArray()">Get Data</button>
+<!-- <ul>
+    <li *ngFor="let user of datafromHttp">{{user.FirstName}}</li>
+</ul> -->
+
+<app-child-http 
+
+[receiveFromParentString]="dataTosendChild"
+[receiveFromParentObj]="dataTosendChildObj"
+[receiveFromParentArray]="dataTosendChildArray"
+></app-child-http>
+

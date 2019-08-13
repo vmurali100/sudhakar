@@ -1,0 +1,11 @@
+<p>sibling2 works!</p>
+<p>Received data from Sibling1: {{data}}</p>
+<h4>Received Object from Sibling1:</h4>
+<ul *ngIf = "objFromSibling1">
+    <li *ngFor = "let prop of keys">{{objFromSibling1[prop]}}</li>
+</ul>
+<h5>Array From Sib1:</h5>
+<ul *ngFor = "let user of arrayFromSibling1">
+    <li>{{user.username}}</li>
+    <li>{{user.email}}</li>
+</ul>
