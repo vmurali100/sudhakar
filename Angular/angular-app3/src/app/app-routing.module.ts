@@ -5,11 +5,15 @@ import { Routes, RouterModule } from "@angular/router";
 // Step 2: Importing Required Component
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
+import { PricingComponent } from "./pricing/pricing.component";
+import { FeaturesComponent } from "./features/features.component";
 
 // Step 3: Configuring the Routes
 const routes: Routes = [
-  { path: "", component: HomeComponent },
-  { path: "about", component: AboutComponent }
+  { path: "home", component: HomeComponent },
+  { path: "about", component: AboutComponent },
+  { path: "pricing", component: PricingComponent },
+  { path: "features", component: FeaturesComponent }
 ];
 
 // Step 4 : Configuring Ng Module

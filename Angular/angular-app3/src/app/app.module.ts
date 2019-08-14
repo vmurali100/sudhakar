@@ -13,6 +13,8 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
+import { PricingComponent } from './pricing/pricing.component';
+import { FeaturesComponent } from './features/features.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { AboutComponent } from "./about/about.component";
     FormsComponent,
     ReactiveFormComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    PricingComponent,
+    FeaturesComponent
   ],
   imports: [
     BrowserModule,
