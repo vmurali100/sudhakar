@@ -17,7 +17,7 @@
       <td>{{ obj.tel }}</td>
       <td>{{ obj.value | currency: "CAD" }}</td>
 
-      <td>{{ obj.gender | gender }}</td>
+      <td>{{ obj.gender | gender: obj }}</td>
     </tr>
   </tbody>
 </table>

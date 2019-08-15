@@ -5,11 +5,11 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class GenderPipe implements PipeTransform {
   transform(value: any, ...args: any[]): any {
-    console.log(value);
+    console.log(args);
     if (value == "Male") {
-      return "Mr";
+      return "Mr." + args[0].fname;
     } else {
-      return "Mrs";
+      return "Mrs. " + args[0].fname;
     }
   }
 }
