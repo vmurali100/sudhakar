@@ -15,6 +15,7 @@ import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { PricingComponent } from './pricing/pricing.component';
 import { FeaturesComponent } from './features/features.component';
+import { GenderPipe } from './gender.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FeaturesComponent } from './features/features.component';
     HomeComponent,
     AboutComponent,
     PricingComponent,
-    FeaturesComponent
+    FeaturesComponent,
+    GenderPipe
   ],
   imports: [
     BrowserModule,

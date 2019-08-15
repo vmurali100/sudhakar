@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "fname": "Susan 4",
+      "lname": "Burkland",
+      "tel": "(804)072-3236",
+      "gender": "Male",
+      "value": 123,
+      "id": 1
+    },
+    {
+      "fname": "Susan 2",
+      "lname": "Burkland",
+      "tel": "(804)072-3236",
+      "gender": "Female",
+      "value": 123,
+      "id": 2
+    },
+    {
+      "fname": "Susan 3",
+      "lname": "Burkland",
+      "tel": "(804)072-3236",
+      "gender": "Male",
+      "value": 123,
+      "id": 3
+    },
+    {
+      "fname": "Susan 5",
+      "lname": "Burkland",
+      "tel": "(804)072-3236",
+      "gender": "Female ",
+      "value": 123,
+      "id": 4
+    }
+  ]
+}

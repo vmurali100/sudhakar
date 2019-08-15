@@ -1,1 +1,27 @@
 <p>home works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First</th>
+      <th>Last</th>
+      <th>Tel</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of data">
+      <td>{{ obj.id }}</td>
+      <td>{{ obj.fname | titlecase }}</td>
+      <td>{{ obj.lname | lowercase }}</td>
+      <td>{{ obj.tel }}</td>
+      <td>{{ obj.value | currency: "CAD" }}</td>
+
+      <td>{{ obj.gender | gender }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <pre>
+    {{ data[0] | json }}
+</pre> -->
