@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" name="" id="fname" /><br />
+      <input type="email" name="" id="email" />
+      <button onclick="getData()" type="button">Get Data</button>
+    </form>
+    <script>
+      function getData() {
+        var fname = document.getElementById("fname").value;
+        var email = document.getElementById("email").value;
+
+        // var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        var pattern = /\S+@\S+\.\S+/;
+        console.log(pattern.test(email));
+        if (fname == "" || fname == undefined) {
+          //   alert("PLease enter First Name");
+        } else {
+          console.log("Welcome to " + fname);
+        }
+      }
+    </script>
+  </body>
+</html>
