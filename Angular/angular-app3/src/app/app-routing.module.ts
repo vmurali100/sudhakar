@@ -7,13 +7,16 @@ import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { PricingComponent } from "./pricing/pricing.component";
 import { FeaturesComponent } from "./features/features.component";
+import { FormsComponent } from "./forms/forms.component";
+import { MyformComponent } from "./myform/myform.component";
 
 // Step 3: Configuring the Routes
 const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
   { path: "pricing", component: PricingComponent },
-  { path: "features", component: FeaturesComponent }
+  { path: "features", component: FeaturesComponent },
+  { path: "form", component: MyformComponent }
 ];
 
 // Step 4 : Configuring Ng Module

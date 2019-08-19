@@ -16,6 +16,7 @@ import { AboutComponent } from "./about/about.component";
 import { PricingComponent } from './pricing/pricing.component';
 import { FeaturesComponent } from './features/features.component';
 import { GenderPipe } from './gender.pipe';
+import { MyformComponent } from './myform/myform.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { GenderPipe } from './gender.pipe';
     AboutComponent,
     PricingComponent,
     FeaturesComponent,
-    GenderPipe
+    GenderPipe,
+    MyformComponent
   ],
   imports: [
     BrowserModule,

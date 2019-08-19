@@ -1,0 +1,30 @@
+<p>myform works!</p>
+
+<form #myForm="ngForm">
+  <input
+    type="text"
+    name="firstName"
+    [(ngModel)]="model.firstName"
+    required
+    minlength="5"
+    #firstName="ngModel"
+  />
+  <br />
+  <input
+    type="text"
+    name="lastName"
+    #lastName
+    [(ngModel)]="model.lastName"
+    required
+    minlength="5"
+  />
+  <br />
+  <span style="color: red" *ngIf="!firstName.valid && myForm.touched"
+    >First Name is Required</span
+  ><br />
+  <button [disabled]="!myForm.valid">Get Data</button>
+</form>
+Touched :{{ myForm.touched }} <br />
+prestine : {{ myForm.pristine }} <br />
+Dirty : {{ myForm.dirty }}
+<pre>{{ myForm.value | json }}</pre>
